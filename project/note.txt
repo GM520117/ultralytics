@@ -7,3 +7,6 @@ git commit -m "Add initial project files and setup environment"
 
 更新：
 git commit -m "Update notes with new information"
+
+刪除：
+git commit -m "Removed virtual environment 'yolov8_env' and its associated files"
