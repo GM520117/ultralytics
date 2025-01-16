@@ -2,3 +2,4 @@
 git commit -m "Add initial project files and setup environment"
 
 更新：
+git commit -m "Update notes with new information"
