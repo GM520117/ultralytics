@@ -1,6 +1,6 @@
-train: ../train/images
-val: ../valid/images
-test: ../test/images
+train: C:\Users\owner\Downloads\YOLOv8\ultralytics\Pharmaceutical.v8-7-2-1.yolov8\train\images
+val: C:\Users\owner\Downloads\YOLOv8\ultralytics\Pharmaceutical.v8-7-2-1.yolov8\valid\images
+test: C:\Users\owner\Downloads\YOLOv8\ultralytics\Pharmaceutical.v8-7-2-1.yolov8\test\images
 
 nc: 3
 names: ['Chipped Pill', 'Defective Pill', 'Intact Pill']
