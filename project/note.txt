@@ -1,0 +1,18 @@
+使用YOLOv5提供的detect.py進行：
+python detect.py --weights runs/train/exp2/weights/best.pt --source project/images --project project/results --name output --exist-ok
+
+移除：
+git commit -m "Remove A.py script"
+
+新增：
+git commit -m "Add A.py script"
+
+更新：
+git commit -m "Update A.py with new functionality"
+git commit -m "Update note.txt with new information"
+
+影像辨識：
+python detect.py --weights runs/train/exp2/weights/best.pt --source project/images --project project/results --name output --exist-ok
+
+訓練模型：
+python train.py --img 640 --batch-size 16 --epochs 50 --data C:/Users/owner/Downloads/Yolov5/yolov5/data/Pharmaceutical.v1-intact-pill.yolov5pytorch/data.yaml --weights yolov5s.pt
