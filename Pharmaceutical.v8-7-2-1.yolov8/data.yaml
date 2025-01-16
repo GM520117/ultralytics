@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['Chipped Pill', 'Defective Pill', 'Intact Pill']
+
+roboflow:
+  workspace: try-pgxkc
+  project: pharmaceutical-ofhjf
+  version: 8
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/try-pgxkc/pharmaceutical-ofhjf/dataset/8
