@@ -1,7 +1,7 @@
 task: segment
 mode: train
 model: yolov8n-seg.pt
-data: C:\Users\owner\Downloads\YOLOv8\ultralytics\Pharmaceutical.v9-721-new.yolov8\data.yaml
+data: C:\Users\owner\Downloads\YOLOv8\ultralytics\Pharmaceutical.v8-7-2-1.yolov8\data.yaml
 epochs: 50
 time: null
 patience: 100
@@ -12,8 +12,8 @@ save_period: -1
 cache: false
 device: null
 workers: 8
-project: segment
-name: train
+project: null
+name: train6
 exist_ok: false
 pretrained: true
 optimizer: auto
@@ -103,4 +103,4 @@ erasing: 0.4
 crop_fraction: 1.0
 cfg: null
 tracker: botsort.yaml
-save_dir: segment\train
+save_dir: C:\Users\owner\Downloads\Yolov5\yolov5\runs\segment\train6
