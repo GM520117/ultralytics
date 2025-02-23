@@ -1,7 +1,7 @@
 import cv2
 
 # DroidCamX 串流 URL
-droidcam_url = "http://192.168.171.116:4747/mjpegfeed"
+droidcam_url = "http://192.168.171.116:4747/video?type=jpg"
 
 # 嘗試開啟串流
 cap = cv2.VideoCapture(droidcam_url)
