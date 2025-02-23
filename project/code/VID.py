@@ -1,6 +1,7 @@
 import cv2
 import time
 import numpy as np
+import urllib.request
 
 from ultralytics import YOLO
 
@@ -11,7 +12,7 @@ model = YOLO(model_path)
 # Set DroidCamX video streaming URL
 #droidcam_url = "http://192.168.171.116:4747/video"
 droidcam_url = "http://192.168.171.116:4747/mjpegfeed"
-camera = cv2.VideoCapture(droidcam_url)
+#camera = cv2.VideoCapture(droidcam_url)
 
 # Set the color corresponding to the category
 class_colors = {
@@ -19,20 +20,25 @@ class_colors = {
     "Chipped Pill": (0, 0, 255)  # Red
 }
 
-# Make sure the camera opens successfully
-if not camera.isOpened():
-    print("Error: Could not open camera.")
-    exit()
+def get_frame():
+    try:
+        img_resp = urllib.request.urlopen(droidcam_url)
+        img_np = np.array(bytearray(img_resp.read()), dtype=np.uint8)
+        frame = cv2.imdecode(img_np, -1)
+        return frame
+    except Exception as e:
+        print(f"Error: Failed to retrieve image. {e}")
+        return None
 
 # Timestamp used to calculate FPS
 prev_time = time.time()
 frame_count = 0
 
-while camera.isOpened():
-    ret, frame = camera.read()
-    if not ret:
+while True:
+    frame = get_frame()
+    if frame is None:
         print("Error: Failed to capture image.")
-        break
+        continue  # Try to get the image again
     
     # Get the original image size
     h, w, _ = frame.shape
@@ -85,5 +91,4 @@ while camera.isOpened():
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-camera.release()
 cv2.destroyAllWindows()
