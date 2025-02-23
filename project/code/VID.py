@@ -9,7 +9,8 @@ model_path = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/segment/train1/weight
 model = YOLO(model_path)
 
 # Set DroidCamX video streaming URL
-droidcam_url = "http://192.168.171.116:4747/video"
+#droidcam_url = "http://192.168.171.116:4747/video"
+droidcam_url = "http://192.168.171.116:4747/mjpegfeed"
 camera = cv2.VideoCapture(droidcam_url)
 
 # Set the color corresponding to the category
