@@ -3,16 +3,38 @@ import time
 import numpy as np
 import urllib.request
 
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from ultralytics import YOLO
+
+def setup_droidcam():
+    # 啟動 WebDriver
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service)
+    driver.get("http://10.22.54.143:4747")  # 替換為你的 DroidCamX 網址
+
+    time.sleep(2)  # 等待頁面加載
+
+    try:
+        override_link = driver.find_element(By.XPATH, "//a[@href='/override']")
+        override_link.click()
+        print("✅ 成功點擊 Override 連結")
+        time.sleep(2)  # 等待影像載入
+    except Exception as e:
+        print(f"❌ 無法點擊 Override 連結: {e}")
+
+    return driver  # 保持瀏覽器開啟
 
 # Load YOLOv8 segmentation model
 model_path = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/segment/train1/weights/best.pt"
 model = YOLO(model_path)
 
 # Set DroidCamX video streaming URL
-#droidcam_url = "http://192.168.171.116:4747/video"
-droidcam_url = "http://192.168.171.116:4747/mjpegfeed"
-#camera = cv2.VideoCapture(droidcam_url)
+droidcam_url = "http://10.22.54.143:4747/video"        # 預設影像流
+#droidcam_url = "http://10.22.54.143:4747/mjpegfeed"  # MJPEG 格式
+#droidcam_url = "http://10.22.54.143:4747/shot.jpg"   # 單張圖片模式
 
 # Set the color corresponding to the category
 class_colors = {
@@ -22,13 +44,26 @@ class_colors = {
 
 def get_frame():
     try:
-        img_resp = urllib.request.urlopen(droidcam_url)
-        img_np = np.array(bytearray(img_resp.read()), dtype=np.uint8)
+        # 嘗試不同的影像來源
+        img_resp = urllib.request.urlopen(droidcam_url)  # 嘗試預設的 /video
+        img_data = img_resp.read()
+
+        if len(img_data) < 100:  # 確保影像大小合理
+            raise ValueError("Received empty image data")
+
+        img_np = np.array(bytearray(img_data), dtype=np.uint8)
         frame = cv2.imdecode(img_np, -1)
+
+        if frame is None:
+            raise ValueError("cv2.imdecode() returned None")
+
         return frame
     except Exception as e:
-        print(f"Error: Failed to retrieve image. {e}")
+        print(f"❌ 影像擷取失敗: {e}")
         return None
+
+# 🔹 啟動 Selenium 來點擊超連結
+browser = setup_droidcam()
 
 # Timestamp used to calculate FPS
 prev_time = time.time()
@@ -92,3 +127,4 @@ while True:
         break
 
 cv2.destroyAllWindows()
+browser.quit()
