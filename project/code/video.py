@@ -1,5 +1,7 @@
-from ultralytics import YOLO
 import cv2
+import os
+
+from ultralytics import YOLO
 
 # 載入已訓練的模型 (使用預訓練模型或自訂模型)
 model_path = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/segment/train1/weights/best.pt"
@@ -15,7 +17,9 @@ width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 # 設定輸出影片
-output_path = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/project/results_VD"
+output_floder = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/project/results_VD"
+os.makedirs(output_floder, exist_ok=True)  # 確保資料夾存在
+output_path = os.path.join(output_floder, "output_video.mp4")
 out = cv2.VideoWriter(output_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height))
 
 while cap.isOpened():
