@@ -33,7 +33,7 @@ model_path = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/segment/train1/weight
 model = YOLO(model_path)
 
 # 設定 DroidCamX 影片串流 URL
-droidcam_url = "http://10.22.54.143:4747/video"        # 預設影像流
+droidcam_url = "http://10.22.54.143:4747/video?960x720"  # 預設影像流
 #droidcam_url = "http://10.22.54.143:4747/mjpegfeed"  # MJPEG 格式
 #droidcam_url = "http://10.22.54.143:4747/shot.jpg"   # 單張圖片模式
 
