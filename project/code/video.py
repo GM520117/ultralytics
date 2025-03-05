@@ -8,7 +8,7 @@ model_path = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/segment/train1/weight
 model = YOLO(model_path)
 
 # 讀取影片
-video_path = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/project/videos/v1.mp4"
+video_path = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/project/videos/v3.mp4"  # 記得改
 cap = cv2.VideoCapture(video_path)
 
 # 取得影片資訊
@@ -39,7 +39,11 @@ while cap.isOpened():
         break
 
     # 進行物件偵測，只保留信心度 >= 0.9
-    results = model(frame, conf=0.9)
+    #results = model(frame, conf=0.9)
+    results = model(frame)
+    #results = model(frame, conf=0.3, iou=0.2)
+
+    print(model.names)
 
     # 確保結果有效
     if results and hasattr(results[0], "plot"):
