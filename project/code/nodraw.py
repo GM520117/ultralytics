@@ -1,4 +1,5 @@
 import cv2
+
 from ultralytics import YOLO
 
 # 載入已訓練的模型
