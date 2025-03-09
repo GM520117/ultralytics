@@ -23,3 +23,4 @@ while True:
 # 清理資源
 cap.release()
 cv2.destroyAllWindows()
+1
