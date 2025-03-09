@@ -4,11 +4,11 @@ import os
 from ultralytics import YOLO
 
 # 載入已訓練的模型
-model_path = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/segment/train1/weights/best.pt"
+model_path = r"C:/Users/user/Downloads/YOLOv8/ultralytics/segment/train1/weights/best.pt"
 model = YOLO(model_path)
 
 # 讀取影片
-video_path = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/project/videos/v3.mp4"  # 記得改
+video_path = r"C:/Users/user/Downloads/YOLOv8/ultralytics/project/videos/v3.mp4"  # 記得改
 cap = cv2.VideoCapture(video_path)
 
 # 取得影片資訊
@@ -17,7 +17,7 @@ width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 # 設定輸出資料夾
-output_folder = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/project/results_VD"
+output_folder = r"C:/Users/user/Downloads/YOLOv8/ultralytics/project/results_VD"
 os.makedirs(output_folder, exist_ok=True)  # 確保資料夾存在
 
 # 方式 2：使用數字編號避免覆蓋
