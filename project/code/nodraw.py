@@ -7,7 +7,7 @@ model_path = r"C:/Users/owner/Downloads/YOLOv8/ultralytics/segment/train1/weight
 model = YOLO(model_path)
 
 # 設定 WebCam IP 和 Port
-ip_address = "10.22.54.143"
+ip_address = "192.168.50.87"
 port = "8080"
 camera_link = f"http://{ip_address}:{port}/video"
 
