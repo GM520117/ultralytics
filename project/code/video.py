@@ -66,4 +66,3 @@ out.release()
 cv2.destroyAllWindows()
 
 print(f"影片已儲存至: {output_path}")
-1
