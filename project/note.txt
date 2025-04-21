@@ -2,8 +2,11 @@
 yolo task=segment mode=train model=yolov8n-seg.pt data=C:\Users\user\Downloads\YOLOv8\ultralytics\Capsule.v4-defective-721.yolov8\data.yaml epochs=100 imgsz=640 project=segment name=train
 (路徑要改)
 
-圖片辨識：
-yolo task=segment mode=predict model="C:\Users\owner\Downloads\YOLOv8\ultralytics\segment\train1\weights\best.pt" source="C:\Users\owner\Downloads\YOLOv8\ultralytics\project\images" save=True project="C:\Users\owner\Downloads\YOLOv8\ultralytics\project\results" name="output"
+圖片辨識-藥丸：
+yolo task=segment mode=predict model="C:\Users\user\Downloads\YOLOv8\ultralytics\segment\train1\weights\best.pt" source="C:\Users\user\Downloads\YOLOv8\ultralytics\project\images-pill" save=True project="C:\Users\user\Downloads\YOLOv8\ultralytics\project\results-pill" name="output"
+
+圖片辨識-膠囊：
+yolo task=segment mode=predict model="C:\Users\user\Downloads\YOLOv8\ultralytics\segment\train4\weights\best.pt" source="C:\Users\user\Downloads\YOLOv8\ultralytics\project\images-capsule" save=True project="C:\Users\user\Downloads\YOLOv8\ultralytics\project\results-capsule" name="output"
 
 新增：
 git commit -m "Add initial project files and setup environment"
