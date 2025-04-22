@@ -1,0 +1,13 @@
+train: C:/Users/user/Downloads/YOLOv8/ultralytics/Capsule.v5-721-new.yolov8/train/images
+val: C:/Users/user/Downloads/YOLOv8/ultralytics/Capsule.v5-721-new.yolov8/valid/images
+test: C:/Users/user/Downloads/YOLOv8/ultralytics/Capsule.v5-721-new.yolov8/test/images
+
+nc: 2
+names: ['Defective Capsule', 'Intact Capsule']
+
+roboflow:
+  workspace: try-pgxkc
+  project: capsule-gc6rg
+  version: 5
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/try-pgxkc/capsule-gc6rg/dataset/5
