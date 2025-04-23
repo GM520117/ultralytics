@@ -6,7 +6,7 @@ yolo task=segment mode=train model=yolov8n-seg.pt data=C:\Users\user\Downloads\Y
 yolo task=segment mode=predict model="C:\Users\user\Downloads\YOLOv8\ultralytics\segment\train1\weights\best.pt" source="C:\Users\user\Downloads\YOLOv8\ultralytics\project\images-pill" save=True project="C:\Users\user\Downloads\YOLOv8\ultralytics\project\results-pill" name="output"
 
 圖片辨識-膠囊：
-yolo task=segment mode=predict model="C:\Users\user\Downloads\YOLOv8\ultralytics\segment\train-100-960\weights\best.pt" source="C:\Users\user\Downloads\YOLOv8\ultralytics\project\images-capsule" save=True project="C:\Users\user\Downloads\YOLOv8\ultralytics\project\results-capsule" name="output"
+yolo task=segment mode=predict model="C:\Users\user\Downloads\YOLOv8\ultralytics\segment\train-100-640\weights\best.pt" source="C:\Users\user\Downloads\YOLOv8\ultralytics\project\images-capsule" save=True project="C:\Users\user\Downloads\YOLOv8\ultralytics\project\results-capsule" name="output"
 
 新增：
 git commit -m "Add initial project files and setup environment"
