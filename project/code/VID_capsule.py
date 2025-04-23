@@ -3,7 +3,7 @@ import cv2
 from ultralytics import YOLO
 
 # 載入已訓練的模型
-model_path = r"C:/Users/user/Downloads/YOLOv8/ultralytics/segment/train-100-640/weights/best.pt"
+model_path = r"C:/Users/user/Downloads/YOLOv8/ultralytics/segment/train-crop30/weights/best.pt"
 model = YOLO(model_path)
 
 # 設定 WebCam IP 和 Port
