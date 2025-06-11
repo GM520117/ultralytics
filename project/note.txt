@@ -6,10 +6,10 @@ yolo task=segment mode=train model=yolov8n-seg.pt data=C:\Users\user\Downloads\Y
 yolo task=segment mode=predict model="C:\Users\user\Downloads\YOLOv8\ultralytics\segment\pill\train1\weights\best.pt" source="C:\Users\user\Downloads\YOLOv8\ultralytics\project\images-pill" save=True project="C:\Users\user\Downloads\YOLOv8\ultralytics\project\results-pill" name="output"
 
 圖片辨識-透明膠囊：
-yolo task=segment mode=predict model="C:\Users\user\Downloads\YOLOv8\ultralytics\segment\capsule\train-FCB(100-640)\weights\best.pt" source="C:\Users\user\Downloads\YOLOv8\ultralytics\project\images-capsule" conf=0.8 save=True project="C:\Users\user\Downloads\YOLOv8\ultralytics\project\results-capsule" name="output"
+yolo task=segment mode=predict model="C:\Users\user\Downloads\YOLOv8\ultralytics\segment\capsule\train-FCB(100-640)\weights\best.pt" source="C:\Users\user\Downloads\YOLOv8\ultralytics\project\images-capsule-crystal" conf=0.8 save=True project="C:\Users\user\Downloads\YOLOv8\ultralytics\project\results-capsule-crystal" name="output"
 
 圖片辨識-不透明膠囊：
-yolo task=segment mode=predict model="C:\Users\user\Downloads\YOLOv8\ultralytics\segment\capsule2.0\train\weights\best.pt" source="C:\Users\user\Downloads\YOLOv8\ultralytics\project\images-capsule" conf=0.8 save=True project="C:\Users\user\Downloads\YOLOv8\ultralytics\project\results-capsule" name="output"
+yolo task=segment mode=predict model="C:\Users\user\Downloads\YOLOv8\ultralytics\segment\capsule2.0\train-288\weights\best.pt" source="C:\Users\user\Downloads\YOLOv8\ultralytics\project\images-capsule-opaque" conf=0.8 save=True project="C:\Users\user\Downloads\YOLOv8\ultralytics\project\results-capsule-opaque" name="output"
 
 新增：
 git commit -m "Add initial project files and setup environment"
