@@ -1,5 +1,5 @@
 訓練模型：
-yolo task=segment mode=train model=yolov8n-seg.pt data=C:\Users\user\Downloads\YOLOv8\ultralytics\Flatfoot.v1i.yolov8\data.yaml epochs=100 imgsz=640 project=segment name=train patience=20
+yolo task=segment mode=train model=yolov8n-seg.pt data=C:\Users\user\Downloads\YOLOv8\ultralytics\Pharmaceutical.v9-721-new.yolov8\data.yaml epochs=100 imgsz=640 project=segment name=train
 (路徑要改)
 
 圖片辨識-藥丸：
