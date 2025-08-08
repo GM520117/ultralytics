@@ -1,12 +1,13 @@
-TP = 90  # 全部預測中都是對的（因為 Recall = 1）
+TP = 51  # 全部預測中都是對的（因為 Recall = 1）
 #FP = round((1 - 0.998) * TP / 0.998)  # 四捨五入
-FP = (1 - 0.999) * TP / 0.999
+FP = (1 - 0.997) * TP / 0.997
 FN = 0    # 因為 Recall = 1
+TN = 43
 
-accuracy = TP / (TP + FP + FN)
+accuracy = (TP + TN) / (TP + FP + FN + TN)
 print(f"Accuracy ≈ {accuracy:.4f}")  # 應該會是 1.0000 左右
 
-precision = 0.999
+precision = 0.997
 recall = 1.0
 
 f1 = 2 * (precision * recall) / (precision + recall)

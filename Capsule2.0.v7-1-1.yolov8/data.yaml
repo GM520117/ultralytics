@@ -1,6 +1,6 @@
-train: ../train/images
-val: ../valid/images
-test: ../test/images
+train: C:/Users/user/Downloads/YOLOv8/ultralytics/Capsule2.0.v7-1-1.yolov8/train/images
+val: C:/Users/user/Downloads/YOLOv8/ultralytics/Capsule2.0.v7-1-1.yolov8/valid/images
+test: C:/Users/user/Downloads/YOLOv8/ultralytics/Capsule2.0.v7-1-1.yolov8/test/images
 
 nc: 2
 names: ['Defective Capsule', 'Intact Capsule']
